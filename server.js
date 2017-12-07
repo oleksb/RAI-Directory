@@ -8,11 +8,14 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
 var path = require("path");
+var moment = require('moment');
+moment().format();
 
 // Sets up the Express App
 // =============================================================
 var app = express();
 const PORT = 3000;
+
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
