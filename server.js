@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
 // =============================================================
-
-app.listen(PORT, () => {
-  console.log('Server started on PORT ' + PORT);
-})
+var server = app.listen(process.env.PORT || 5000, function () {
+  var port = server.address().port;
+  console.log("Express is working on port " + port);
+});
