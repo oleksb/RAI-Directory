@@ -3,11 +3,14 @@ html, body {
     background-image: url("../large.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .title {
     font-size: 50px !important;
     font-family: 'Francois One', sans-serif;
+    padding-bottom: -20px;
 }
 
 .weather{
@@ -26,13 +29,16 @@ margin-right: 15px;
     font-family: 'Maven Pro', sans-serif, italic;
     margin-top: 10px;
 }
-
+.weatherImg{
+    opacity: 1 !important;
+}
 .weatherbox {
-    background-color: #DAD289;
-    height: 125px;
-    width: 225px;
+    height: 100px;
+    width: 226px;
     margin-top: 16px;
-    opacity: 0.4;
+    margin-left: 25px;
+    color: white;
+    font-family: 'Francois One', sans-serif;
 }
 
 .even {
@@ -78,7 +84,7 @@ ul {
     border-bottom: solid 1px;
     margin-left: -16px;
     margin-right: -16px;
-    padding: 7px;
+    padding: 4px;
 }
 
 .container-fluid {
@@ -100,4 +106,9 @@ ul {
     position: absolute;
     top: 0px;
     right: 15px;
+}
+
+.temp{
+    font-size: 40px;
+    margin-top: -20px !important;
 }
