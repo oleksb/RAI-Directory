@@ -3,7 +3,6 @@ $( document ).ready(function() {
     // initial firing
     var queryURL = "http://api.openweathermap.org/data/2.5/weather?zip=60659,us&units=imperial&APPID=15c4449b72461cbf6e40e27d8225c3e2";
     $.ajax({url: queryURL, method: 'GET'}).done(function(response) {
-        console.log(response);
         var temp = response.main.temp;
         var iconCode = response.weather[0].icon;
         $('.temp').empty();
@@ -31,7 +30,6 @@ $( document ).ready(function() {
         $('.date').empty();
         $('.date').append(currentDate);
         var screenCheck = moment().format('LT');
-        console.log(screenCheck);
         if (screenCheck == '7:00 AM'){
         jQuery(function($) {
             $("#over").css('visibility', 'hidden');
@@ -42,12 +40,11 @@ $( document ).ready(function() {
                 $("#over").css('visibility', 'hidden');
             });
     };
-}, 5000 );
+}, 60000 );
 
     setInterval(function() {
         var queryURL = "http://api.openweathermap.org/data/2.5/weather?zip=60659,us&units=imperial&APPID=15c4449b72461cbf6e40e27d8225c3e2";
         $.ajax({url: queryURL, method: 'GET'}).done(function(response) {
-                console.log(response);
                 var temp = response.main.temp;
                 var iconCode = response.weather[0].icon;
                 $('.temp').empty();
