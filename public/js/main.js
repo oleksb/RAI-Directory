@@ -37,7 +37,7 @@ $( document ).ready(function() {
     };
         if (screenCheck == '7:00 PM'){
             jQuery(function($) {
-                $("#over").css('visibility', 'hidden');
+                $("#over").css('visibility', 'visible');
             });
     };
 }, 60000 );
