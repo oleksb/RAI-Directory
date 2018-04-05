@@ -1,5 +1,19 @@
 
 $( document ).ready(function() {
+    
+function fullScreenImageSwap() {
+  $('#over').css('visibility', 'visible');
+  $('#over').css('position', 'initial');
+  $('.overImg').attr('src', 'rennovation.png');
+  $('.overImg').css('visibility', 'visible');
+};
+
+function returnBackToRegular() {
+    $('#over').css('visibility', 'hidden');
+    $('#over').css('position', 'absolute');
+    $('.overImg').css('visibility', 'hidden');
+};
+
     // initial firing
     var queryURL = "http://api.openweathermap.org/data/2.5/weather?zip=60659,us&units=imperial&APPID=15c4449b72461cbf6e40e27d8225c3e2";
     $.ajax({url: queryURL, method: 'GET'}).done(function(response) {
@@ -54,5 +68,13 @@ $( document ).ready(function() {
                 $(".weatherImg").html("<img height='100px' width='100px' src='" + iconUrl  + "'>");
         });
     }, 600000 );
+
+    setInterval(function(){
+        fullScreenImageSwap()
+    }, 10000);
+
+    setInterval(function(){
+        returnBackToRegular();
+    }, 20000);
         
-    })
+})

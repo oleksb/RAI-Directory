@@ -123,3 +123,9 @@ ul {
     font-size: 40px;
     margin-top: -20px !important;
 }
+
+.overImg {
+    height: 100%;
+    width: 100%;
+    visibility: hidden;
+}
