@@ -8,6 +8,11 @@ function fullScreenImageSwap() {
   $('.overImg').css('visibility', 'visible');
 };
 
+var function1 = fullScreenImageSwap();
+var function2 = returnBackToRegular();
+var functionArray = [function1, function2];
+
+
 function returnBackToRegular() {
     $('#over').css('visibility', 'hidden');
     $('#over').css('position', 'absolute');
@@ -33,7 +38,6 @@ function returnBackToRegular() {
         $('.clock').append(currentTime);
         $('.date').empty();
         $('.date').append(currentDate);
-        
 
 // Interval firing
     setInterval(function() {
@@ -67,14 +71,14 @@ function returnBackToRegular() {
                 $('.weatherImg').empty();
                 $(".weatherImg").html("<img height='100px' width='100px' src='" + iconUrl  + "'>");
         });
-    }, 600000 );
+    }, 600000);
 
-    setInterval(function(){
-        fullScreenImageSwap()
-    }, 10000);
 
-    setInterval(function(){
-        returnBackToRegular();
-    }, 20000);
-        
-})
+
+setInterval(function(){ 
+for (var i = 0; i < functionArray.length; i++){
+    functionArray[i];
+};
+}, 10000);
+
+});
