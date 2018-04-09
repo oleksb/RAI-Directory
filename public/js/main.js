@@ -17,12 +17,20 @@ function switch2() {
 };
 
 function switchScreens(){
+
+   var time = moment();
+   var beforeTime = moment("07:00:00 AM", "hh:mm:ss A");
+   var afterTime = moment("07:00:00 PM", "hh:mm:ss A");
+   if (time.isBetween(beforeTime, afterTime)){   
     var elem = $('.test').html();
     if (elem === "1"){
         switch1();
     } else if (elem === "2"){
         switch2();
     }
+   } else {
+    return;
+   };
 }
 
 setInterval(function(){
@@ -57,18 +65,7 @@ setInterval(function(){
         $('.clock').append(currentTime);
         $('.date').empty();
         $('.date').append(currentDate);
-        var screenCheck = moment().format('LT');
-        if (screenCheck == '7:00 AM'){
-        jQuery(function($) {
-            $("#over").css('visibility', 'hidden');
-        });
-    };
-        if (screenCheck == '7:00 PM'){
-            jQuery(function($) {
-                $("#over").css('visibility', 'visible');
-            });
-    };
-}, 60000 );
+    }, 60000 );
 
     setInterval(function() {
         var queryURL = "http://api.openweathermap.org/data/2.5/weather?zip=60659,us&units=imperial&APPID=15c4449b72461cbf6e40e27d8225c3e2";
