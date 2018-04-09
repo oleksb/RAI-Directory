@@ -17,22 +17,33 @@ function switch2() {
 };
 
 function switchScreens(){
-
+var weekday = moment().weekday();
+// check to make sure it is not Saturday or Sunday
+if (weekday != 6 && weekday != 7){
    var time = moment();
    var beforeTime = moment("07:00:00 AM", "hh:mm:ss A");
    var afterTime = moment("07:00:00 PM", "hh:mm:ss A");
+   // check to make sure it is between 7 am and 7 pm
    if (time.isBetween(beforeTime, afterTime)){   
     var elem = $('.test').html();
+    // first function
     if (elem === "1"){
         switch1();
+        // second function
     } else if (elem === "2"){
         switch2();
     }
+    // if it is before 7 or after 7, make screen black
    } else {
     $('#over').css('visibility', 'visible');
     $('#over').attr('src', '');
    };
-}
+    } else {
+    // if it is Sat or Sun, make screen black
+    $('#over').css('visibility', 'visible');
+    $('#over').attr('src', '');
+    };
+};
 
 setInterval(function(){
     switchScreens();
