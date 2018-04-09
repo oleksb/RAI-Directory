@@ -29,7 +29,8 @@ function switchScreens(){
         switch2();
     }
    } else {
-    return;
+    $('#over').css('visibility', 'visible');
+    $('#over').attr('src', '');
    };
 }
 
